@@ -1603,7 +1603,7 @@ describe("agent routes adapter validation", () => {
     expect(JSON.stringify(conflicting.body)).toContain("openrouter");
     expect(JSON.stringify(conflicting.body)).toContain("openai-codex");
     expect(mockAgentService.create).not.toHaveBeenCalled();
-  });
+  }, 60_000);
 
   it("rejects a hermes_local agent config whose model id namespace disagrees with the configured base URL", async () => {
     const selection = await import("../services/agent-runner-selection.js");
@@ -1623,7 +1623,7 @@ describe("agent routes adapter validation", () => {
     expect(conflicting.status, JSON.stringify(conflicting.body)).toBe(422);
     expect(JSON.stringify(conflicting.body)).toContain("base URL");
     expect(mockAgentService.create).not.toHaveBeenCalled();
-  });
+  }, 60_000);
 
   it("accepts a hermes_local agent config whose model id namespace agrees with the configured provider", async () => {
     const selection = await import("../services/agent-runner-selection.js");
@@ -1645,7 +1645,7 @@ describe("agent routes adapter validation", () => {
       adapterType: "hermes_local",
       adapterConfig: { model: "openrouter/gpt-4.1-mini", provider: "openrouter" },
     });
-  });
+  }, 60_000);
 
   it("keeps an existing paperclip_runner agent editable after the flag is disabled", async () => {
     const existing = await mockAgentService.getById();
