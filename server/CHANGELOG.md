@@ -5,6 +5,7 @@
 ### Patch Changes
 
 - Bound full-tree workspace Git scans with process-wide concurrency, queue, timeout, cancellation, coalescing, and short-lived changed-file caching. Saturated or timed-out changed-file requests now return a retryable degraded response, and hidden file-browser panels no longer initiate scans.
+- Add a SHA-anchored merge-readiness gate. The gate reads the review verdicts on the covering ticket and compares them with the live head SHA of the pull request. A pull request with an open QA FAIL verdict, a QA PASS verdict that names a different SHA, or no verdict at all is refused with a machine-readable reason. An override requires a named author and a reason, and it is recorded with the evaluation. See `doc/merge-readiness-gate.md`.
 
 ## 0.3.1
 

@@ -2916,3 +2916,18 @@ export {
   issueActivityChangesTaskIdentity,
 } from "./issue-activity-identity.js";
 export { recognizeLinkPreview, type LinkPreviewTarget, type LinkPreviewState, type LinkPreview, type LinkPreviewResult } from "./link-preview.js";
+export {
+  MERGE_READINESS_SIGNOFF_MARKER,
+  applyMergeReadinessOverride,
+  evaluateMergeReadiness,
+  isMergeReadinessSha,
+  mergeReadinessShaMatches,
+  parseMergeReadinessVerdict,
+  type MergeReadinessBlocker,
+  type MergeReadinessBlockerCode,
+  type MergeReadinessInput,
+  type MergeReadinessOverride,
+  type MergeReadinessResult,
+  type MergeReadinessVerdict,
+  type MergeReadinessVerdictKind,
+} from "./types/merge-readiness.js";

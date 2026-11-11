@@ -1,5 +1,11 @@
 # @paperclipai/shared
 
+## Unreleased
+
+### Patch Changes
+
+- Add a pure merge-readiness evaluator. The evaluator compares review verdicts with the live head SHA of a pull request. A QA FAIL verdict blocks the merge at any SHA. A QA PASS verdict clears the merge only when it names the head SHA. An override requires a named author and a reason.
+
 ## 0.3.1
 
 ### Patch Changes

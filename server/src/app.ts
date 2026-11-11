@@ -150,6 +150,7 @@ import { agentChatMessageRoutes } from "./routes/agent-chat-messages.js";
 import { activityRoutes } from "./routes/activity.js";
 import { dashboardRoutes } from "./routes/dashboard.js";
 import { attentionRoutes } from "./routes/attention.js";
+import { mergeReadinessRoutes } from "./routes/merge-readiness.js";
 import { decisionTrainingRoutes } from "./routes/decision-training.js";
 import { decisionRoutes } from "./routes/decisions.js";
 import { decisionQueueRoutes } from "./routes/decision-queues.js";
@@ -855,6 +856,7 @@ export async function createApp(
   api.use(activityRoutes(db));
   api.use(dashboardRoutes(db));
   api.use(attentionRoutes(db));
+  api.use(mergeReadinessRoutes(db));
   api.use(decisionTrainingRoutes(db));
   api.use(decisionRoutes(db, opts.decisionServiceOptions));
   api.use(decisionQueueRoutes(db));
